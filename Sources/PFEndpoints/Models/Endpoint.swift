@@ -42,7 +42,7 @@ public struct PFEndpoint: Codable {
     }
 }
 
-public extension PFEndpoint: Equatable {
+extension PFEndpoint: Equatable {
     
     public static func == (lhs: PFEndpoint, rhs: PFEndpoint) -> Bool {
         lhs.title == rhs.title && lhs.url == rhs.url
