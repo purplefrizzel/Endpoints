@@ -226,13 +226,14 @@ public extension PFEndpoints {
                 self.selected(PFEndpoint(title: "Custom", url: url))
                 handleDismissal()
             })
-        }
-        alert.addAction(textFieldCompleteButton)
-        
-        alert.addTextField { textField in
-            textField.placeholder = self.configuration.textFieldPlaceholder
-            textField.addTarget(self, action: #selector(self.textFieldChanged), for: .editingChanged)
-            textField.text = self.currentEndpoint?.url.absoluteString
+            
+            alert.addAction(textFieldCompleteButton)
+            
+            alert.addTextField { textField in
+                textField.placeholder = self.configuration.textFieldPlaceholder
+                textField.addTarget(self, action: #selector(self.textFieldChanged), for: .editingChanged)
+                textField.text = self.currentEndpoint?.url.absoluteString
+            }
         }
         
         for action in configuration.actions {
